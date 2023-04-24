@@ -25,6 +25,8 @@ if($instanceNum -gt 1) {
    $vmServiceFolder = $vmServiceFolder + $instanceNum
 }
 
+
+
 $logsbasefolder = "C:\gaming"
 $logsfolder = "c:\gaming\logs"
 $logoutput = $logsfolder + '\ue4-startVMSS-output' + (get-date).ToString('MMddyyhhmmss') + '.txt'
@@ -56,6 +58,8 @@ catch {
 finally {
    $error.clear()    
 }
+
+Set-NetFirewallProfile -Enabled False
  
 #create a log folder if it does not exist
 if (-not (Test-Path -LiteralPath $logsfolder)) {
