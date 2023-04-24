@@ -7,7 +7,7 @@
 
 #CHANGE: Set your forked path here for your GitHub repo (and be sure to check in changes as scripts pull resources from GitHub)
 variable "gitpath" {
-  default = "https://github.com/Azure/Unreal-Pixel-Streaming/"
+  default = "https://github.com/Came19xx/Lifield_V1/"
 }
 
 #The name of the Unreal 3D App, (i.e., PixelStreamingDemo.exe without the .exe at the end)
@@ -17,10 +17,10 @@ variable "pixel_stream_application_name" {
 
 #Resolution width and height for the 3D App to run (smaller resolutions can fit more streams per GPU and/or a higher FPS)
 variable "resolutionWidth" {
-  default = 1920
+  default = 1280
 }
 variable "resolutionHeight" {
-  default = 1080
+  default = 768
 }
 
 #Frames Per Second desired for the 3D app (-1 means default 60 fps limit. Use 30, 60, etc..)
@@ -30,7 +30,7 @@ variable "fps" {
 
 #Number of Virtual Machine Scale Set nodes scaled out on the VMSS cluster (1 stream per GPU VM by default)
 variable "vmss_start_instances" {
-  default = 1
+  default = 10
 }
 
 #How many instances per node you want to run on each GPU (test with lower FPS and resolution to squeeze more on)
@@ -63,7 +63,7 @@ variable "matchmaker_vm_storage_account_type" {
 #but increase your quota in your Azure portal for NV12s_v3's and use those below as they have a newer, more 
 #powerful CPU for similar price. NV6 was the default chosen below to avoid quota errors when using this for the first time.
 variable "vmss_size" {
-  default = "Standard_NV6"
+  default = "Standard_NC4as_T4_v3"
   #default = "Standard_NV12s_v3"
 }
 
